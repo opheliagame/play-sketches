@@ -425,9 +425,6 @@ export function calcMetrics(el) {
 	const lineHeight = parseFloat(style.getPropertyValue('line-height'))
 	let cellWidth
 
-	console.log('fontFamily: ', fontFamily)
-	console.log('fontSize: ', fontSize)
-
 	// If the output element is a canvas 'measureText()' is used
 	// else cellWidth is computed 'by hand' (should be the same, in any case)
 	if (el.nodeName == 'CANVAS') {
@@ -437,7 +434,7 @@ export function calcMetrics(el) {
 	} else {
 		const span = document.createElement('span')
 		el.appendChild(span)
-		span.innerHTML = '馬'.padEnd(50, '馬')
+		span.innerHTML = ''.padEnd(50, 'X')
 		cellWidth = span.getBoundingClientRect().width / 50
 		el.removeChild(span)
 	}
@@ -465,5 +462,3 @@ export function calcMetrics(el) {
 
 	return metrics
 }
-
-

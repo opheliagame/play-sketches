@@ -12,46 +12,43 @@
 			padding: 0;
 			margin: 0;
 			font-size: 1em;
-			line-height: 1.2;
+			/* line-height: 1em; */
 			font-family: 'Simple Console', monospace;
       width: 100vw;
       height: 100vh;
-      overflow: hidden;
+      background-color: #b5decc;
 		}
     main {
       width: 100%;
       height: 100%;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      gap: 0;
     }
-		pre {
-			/* position: absolute;
-			
-			left:0;
-			top:0;
-			width:100vw;
-			height:100vh; */
 
-      /* height: 30rem; */
-      /* width: 20rem; */
+    @media screen and (min-width: 600px) {
+      main {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+      }
+    }
+
+		pre {
+			
       margin:0;
 			padding:0;
       width: 100%;
       height: 100%;
 			font-family: inherit;
-			/* font-size: 14px; */
 		}
 
     pre {
-			/* margin: 1em; */
-			/* width: 40em; */
-			/* height: 22em; */
 			display: inline-block;
 			font-size: 1em;
-			line-height: 1.2;
+			line-height: 1.2em;
 			font-family: 'Simple Console', monospace;
-			background-color: white;
+			background-color: #b5decc;
 		}
 
 		canvas {
@@ -59,11 +56,20 @@
 			width: 800px;
 			height: 800px;
 		}
+
+    h1 {
+      font-size: large;
+      color: royalblue;
+      text-transform: uppercase;
+    }
 	</style>
 
 </head>
 <body>
+  <h1>opheliagame's play sketches</h1>
   <main>
+    <pre></pre>
+    <pre></pre>
     <pre></pre>
     <pre></pre>
     <pre></pre>
@@ -91,6 +97,8 @@
 		run(program2, { element : pre[1] }).catch(errorHandler)
 		run(program1, { element : pre[2] }).catch(errorHandler)
 		run(program2, { element : pre[3] }).catch(errorHandler)
+    run(program1, { element : pre[4] }).catch(errorHandler)
+		run(program2, { element : pre[5] }).catch(errorHandler)
 	</script>
 </body>
 </html>
