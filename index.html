@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>opheliagame's play.core sketches</title>
+
+	<link rel="stylesheet" type="text/css" href="/css/simple_console.css">
+
+  <style type="text/css" media="screen">
+		html, body {
+			padding: 0;
+			margin: 0;
+			font-size: 1em;
+			line-height: 1.2;
+			font-family: 'Simple Console', monospace;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+		}
+    main {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
+		pre {
+			/* position: absolute;
+			
+			left:0;
+			top:0;
+			width:100vw;
+			height:100vh; */
+
+      /* height: 30rem; */
+      /* width: 20rem; */
+      margin:0;
+			padding:0;
+      width: 100%;
+      height: 100%;
+			font-family: inherit;
+			/* font-size: 14px; */
+		}
+
+    pre {
+			/* margin: 1em; */
+			/* width: 40em; */
+			/* height: 22em; */
+			display: inline-block;
+			font-size: 1em;
+			line-height: 1.2;
+			font-family: 'Simple Console', monospace;
+			background-color: white;
+		}
+
+		canvas {
+			font-family: "M PLUS 1 Code";
+			width: 800px;
+			height: 800px;
+		}
+	</style>
+
+</head>
+<body>
+  <main>
+    <pre></pre>
+    <pre></pre>
+    <pre></pre>
+    <pre></pre>
+
+  </main>
+
+	<!-- <canvas style="width: 800px; height: 800px;"></canvas> -->
+
+	<script type="module">
+		import { run } from '/src/run.js'
+		import * as program1 from '/sketches/pattern1.js'
+		import * as program2 from '/sketches/pattern2.js'
+		// import * as program3 from '/sketches/pattern1.js'
+		// import * as program4 from '/sketches/pattern1.js'
+
+
+    function errorHandler(e) {
+      console.warn(e.message)
+			console.log(e.error)
+    }
+
+    const pre = document.querySelectorAll('pre')
+		run(program1, { element : pre[0] }).catch(errorHandler)
+		run(program2, { element : pre[1] }).catch(errorHandler)
+		run(program1, { element : pre[2] }).catch(errorHandler)
+		run(program2, { element : pre[3] }).catch(errorHandler)
+	</script>
+</body>
+</html>

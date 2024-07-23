@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="utf-8">
+	<title>Test single</title>
+	<link rel="stylesheet" type="text/css" href="/css/simple_console.css">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@100..700&display=swap" rel="stylesheet">
+
+	<style type="text/css" media="screen">
+		html, body {
+			padding: 0;
+			margin: 0;
+			font-size: 1em;
+			line-height: 1.2;
+			font-family: 'Simple Console', monospace;
+		}
+		pre {
+			position: absolute;
+			margin:0;
+			padding:0;
+			left:0;
+			top:0;
+			width:100vw;
+			height:100vh;
+			font-family: inherit;
+			/* font-size: 14px; */
+		}
+		canvas {
+			font-family: "M PLUS 1 Code";
+			width: 800px;
+			height: 800px;
+		}
+	</style>
+</head>
+<body>
+	<pre></pre>
+
+	<!-- <canvas style="width: 800px; height: 800px;"></canvas> -->
+
+	<script type="module">
+		import { run } from '/src/run.js'
+		import * as program from '/src/programs/sdf/circle.js'
+		run(program, { element : document.querySelector('pre') }).then(function(e){
+			console.log(e)
+		}).catch(function(e) {
+			console.warn(e.message)
+			console.log(e.error)
+		})
+	</script>
+</body>
+</html>
