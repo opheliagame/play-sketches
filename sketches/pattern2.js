@@ -6,7 +6,7 @@
 
 const colors = ['#b73f74', '#b5decc', '#c7d14f']
 
-import { fract } from './src/modules/num.js'
+import { fract } from '../src/modules/num.js'
 
 const tri = (v) => {
 	const p = 2
