@@ -4,6 +4,7 @@
 @desc   Use of coord.x and coord.y
 */
 
+// https://www.wada-sanzo-colors.com/combinations/289
 const colors = ['#f8ed43', '#c7d14f']
 
 import { fract } from '../src/modules/num.js'
