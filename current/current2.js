@@ -55,7 +55,7 @@ export function main(coord, context, cursor, buffer) {
 		  
     
 	return {
-		char: res,
+		char: '/',
     color: 'transparent',
 		backgroundColor: colors[cindex % colors.length]
 	}

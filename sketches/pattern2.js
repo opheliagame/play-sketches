@@ -4,7 +4,8 @@
 @desc   Use of coord.x and coord.y
 */
 
-const colors = ['#b73f74', '#b5decc', '#c7d14f']
+// https://www.wada-sanzo-colors.com/combinations/289
+const colors = ['#f8ed43', '#c7d14f']
 
 import { fract } from '../src/modules/num.js'
 
@@ -38,17 +39,17 @@ export function main(coord, context, cursor, buffer) {
 	// const stx = st.y < 0 ? st.x : 1.0-st.x
 	// const cindex = coord.y + Math.floor((tri(stx + Math.floor(t*1000)*3)) * context.cols * beat)
 
-	const t  = context.time * 0.000002
-  const beat = (Math.floor(t*500) * 3) % 32
+  const t  = context.time * 0.000002
+  const beat = (Math.floor(t*500) * 5) % 32
   const stx = st.y < 0 ? st.x : 1.0-st.x
-  const res = 3 + beat
+  const res = Math.floor(Math.abs(stx)*4 + beat)
   const cindex = 
       floor(abs(fract(st.x*res) - 0.5) * context.cols) 
     + floor(abs(tri(fract(st.y * res/2) - 0.5)) * context.rows/res)
 	
 	return {
-		char: 'm',
-    color: 'transparent',
+		char: '',
+    color: 'black',
 		backgroundColor: colors[cindex % colors.length]
 	}
 }
