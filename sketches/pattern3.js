@@ -13,16 +13,16 @@ export const settings = {
 let seed = (Math.random()*2-1) * 3
 
 const {floor, abs} = Math	
-// https://www.wada-sanzo-colors.com/combinations/319
-let colors_main = ['white', '#437742', '#ffdd00', '#f99d1b' ]
+let colors_main = [ '#437742', 'whitesmoke', '#ffdd00']
+// let colors_main = ['white', '#437742', '#ffdd00', '#f99d1b' ]
 let colors = colors_main
 
 export function main(coord, context, cursor, buffer) {
 	
-// 	if(context.frame % 100 == 0) {
-// 		colors = [...colors_main.slice(1), colors_main[0]]
-// 		colors_main = colors
-// 	}
+	// if(context.frame % 100 == 0) {
+	// 	colors = [...colors_main.slice(1), colors_main[0]]
+	// 	colors_main = colors
+	// }
 		
 	
 	// contex.metrics.aspect holds the font (or cell) aspect ratio
@@ -36,9 +36,9 @@ export function main(coord, context, cursor, buffer) {
         y : 2.0 * (coord.y - context.rows / 2) / m
     }
 	
-	const t  = context.time * 0.0002
+	const t  = context.time * 0.00005
   	const beat = (
-		 
+      Math.floor(t*200) +
 				   Math.floor(Math.sin(st.y * t * coord.y*t + t*20)  )) 
 	
 	// + Math.floor(Math.sin(coord.x * coord.y + t*2) * t)
@@ -56,7 +56,7 @@ export function main(coord, context, cursor, buffer) {
 		  
     
 	return {
-		char: res,
+		char: '/',
     color: 'transparent',
 		backgroundColor: colors[cindex % colors.length]
 	}
