@@ -13,6 +13,7 @@ export const settings = {
 let seed = (Math.random()*2-1) * 3
 
 const {floor, abs} = Math	
+// https://www.wada-sanzo-colors.com/combinations/319
 let colors_main = ['white', '#437742', '#ffdd00', '#f99d1b' ]
 let colors = colors_main
 
@@ -35,7 +36,7 @@ export function main(coord, context, cursor, buffer) {
         y : 2.0 * (coord.y - context.rows / 2) / m
     }
 	
-	const t  = context.time * 0.00002
+	const t  = context.time * 0.0002
   	const beat = (
 		 
 				   Math.floor(Math.sin(st.y * t * coord.y*t + t*20)  )) 

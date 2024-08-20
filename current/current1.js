@@ -35,7 +35,7 @@ export function main(coord, context, cursor, buffer) {
         y : 2.0 * (coord.y - context.rows / 2) / m
     }
 	
-	const t  = context.time * 0.00002
+	const t  = context.time * 0.0002
   	const beat = (
 		 
 				   Math.floor(Math.sin(st.y * t * coord.y*t + t*20)  )) 
